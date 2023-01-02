@@ -1,0 +1,467 @@
+ 
+ body{
+  background: rgba(46,46,49);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding: 5rem;
+  margin: 0;
+  width: 70em;
+  height: 70em;
+}
+
+/*navegación*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+body {
+	position: relative;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	min-height: 100vh;
+	background: rgba(46,46,49);
+  overflow: hidden;
+}
+.container {
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/*conjunto de todo el boton*/
+.container .btn {
+	position: relative;
+	top: -31em;
+	left: -23em;
+	width: 250px;
+	height: 50px;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*boton*/
+.container .btn a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+.container .btn:hover a {
+	letter-spacing: 3px;
+}
+
+/*sombra blanca del boton*/
+.container .btn a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 0.5s;
+	filter: blur(0px);
+}
+.container .btn:hover a::before {
+	transform: skewX(45deg) translate(200px);
+}
+
+.container .btn::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.container .btn:hover::before /*lightup button*/ {
+	bottom: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+
+.container .btn::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	top: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.container .btn:hover::after /*lightup button*/ {
+	top: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+.container .btn:nth-child(1)::before, /*chnage 1*/
+.container .btn:nth-child(1)::after {
+	background: red;
+	box-shadow: 0 0 5px red, 0 0 15px red, 0 0 30px red,
+		0 0 60px red;
+}
+
+
+/*efecto cristal*/
+.cristal {
+  width: 35rem;
+  height: auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color:white;
+  margin-left: 2rem;
+  margin-top: -3rem;
+
+}
+
+.cristal-title {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+/* .cristal p{
+  margin-bottom: 1.5rem;
+} */
+
+/*en caso de tener algún botón*/
+/* a {
+  background-color: #6363db;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}  */
+
+/*fin del boton*/
+
+.cristal {
+  background: rgba(255, 255, 255, 0.136);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  border: 1.5px solid rgba(209, 213, 219, 0.164);
+ }
+
+/*fin del efecto cristal*/
+
+/*tarjeta google*/
+
+#card {
+  color: black;
+  background: #fff;
+  width: 450px;
+  height: 15rem;
+  margin: 20% auto;
+  padding: 20px 30px;
+  border: 1px solid white;
+  -webkit-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -khtml-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  text-align: center; }
+
+  #card h1 {
+    color: #dc152c;
+    font-weight: normal;
+    font-size: 48px;
+    margin: 0 0 10px 0; }
+
+  #card h1::first-letter {
+      color: #194ff7; }
+  
+  #card h1 b {
+      color: #f1840b;
+      font-weight: normal; }
+  
+  #card h1 b + b {
+      color: #194ff7; }
+  
+  #card h1 b + b + b {
+      color: #00940e; }
+
+.content {
+  text-align: left;
+  /* Pure CSS3 typing animation with steps() :
+     http://lea.verou.me/2011/09/pure-css3-typing-animation-with-steps/ */ }
+  .content ul {
+    padding: 0;
+    margin: 0;
+    font: 16px Arial; }
+  
+    .content ul li {
+      list-style: none; }
+    .content ul li a {
+        color: #12C; }
+    .content ul li span {
+        display: block;
+        width: 100%;
+        margin-bottom: 2px; }
+    .content ul li span:nth-child(2) {
+          margin-bottom: 10px; }
+    .content ul li span:nth-child(2) a {
+            color: #093;
+            text-decoration: none; }
+    .content ul li span:nth-child(3), .content ul li span:nth-child(4) {
+          font-size: 14px; }
+  
+    .content .text {
+    border: 1px solid #7ec6fd;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px; }
+  
+    .content .text h2 {
+      position: relative;
+      float: left;
+      font-size: 100%;
+      font-weight: normal;
+      padding: 0;
+      margin: 5px 10px; }
+    .content .text h2 span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        background: white;
+        /* same as background */
+        border-left: 0.1em solid black;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite;
+        -moz-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite; }
+
+/* Animate CSS : https://daneden.me/animate/ */
+.animated {
+  -webkit-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -khtml-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.4s;
+  -o-animation-duration: 0.4s;
+  -moz-animation-duration: 0.4s;
+  -khtml-animation-duration: 0.4s;
+  -ms-animation-duration: 0.4s;
+  animation-duration: 0.4s; }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -khtml-animation-name: fadeIn;
+  -ms-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+/* Typing keyframes */
+@-webkit-keyframes typing {
+  0% {
+    width: 100%; }
+
+  100% {
+    width: 0; } }
+
+@-moz-keyframes typing {
+  0% {
+    width: 100%; }
+
+  100% {
+    width: 0; } }
+
+@-o-keyframes typing {
+  0% {
+    width: 100%; }
+
+  100% {
+    width: 0; } }
+
+@keyframes typing {
+  0% {
+    width: 100%; }
+
+  100% {
+    width: 0; } }
+
+/* FadeIn keyframes */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+  
+
+  @media (min-width:320px) and (max-width: 576px){
+  
+    body{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .cristal{
+      margin-left: -28em;
+      width: 80%;
+    }
+
+
+    #card{
+      color: black;
+      background: #fff;
+      width: 500px;
+      height: 20rem;
+      border: 1px solid white;
+      -webkit-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+     -o-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+    -khtml-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+    text-align: center; }
+
+    #card h1 {
+      color: #dc152c;
+      font-weight: normal;
+      font-size: 48px;
+      margin: 0 0 10px 0; }
+  
+    #card h1::first-letter {
+        color: #194ff7; }
+    
+    #card h1 b {
+        color: #f1840b;
+        font-weight: normal; }
+    
+    #card h1 b + b {
+        color: #194ff7; }
+    
+    #card h1 b + b + b {
+        color: #00940e; }
+  
+  .content {
+    text-align: left;
+    /* Pure CSS3 typing animation with steps() :
+       http://lea.verou.me/2011/09/pure-css3-typing-animation-with-steps/ */ }
+    .content ul {
+      padding: 0;
+      margin: 0;
+      font: 16px Arial; }
+    
+      .content ul li {
+        list-style: none; }
+      .content ul li a {
+          color: #12C; }
+      .content ul li span {
+          display: block;
+          width: 100%;
+          margin-bottom: 2px; }
+      .content ul li span:nth-child(2) {
+            margin-bottom: 10px; }
+      .content ul li span:nth-child(2) a {
+              color: #093;
+              text-decoration: none; }
+      .content ul li span:nth-child(3), .content ul li span:nth-child(4) {
+            font-size: 14px; }
+    
+      .content .text {
+      border: 1px solid #7ec6fd;
+      float: left;
+      width: 100%;
+      margin-bottom: 10px; }
+    
+      .content .text h2 {
+        position: relative;
+        float: left;
+        font-size: 100%;
+        font-weight: normal;
+        padding: 0;
+        margin: 5px 10px; }
+      .content .text h2 span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0;
+          background: white;
+          /* same as background */
+          border-left: 0.1em solid black;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite;
+          -moz-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite; }
+
+          
+
+    
+  }
+  
+  @media (max-width: 1024px){
+    .cristal{
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  

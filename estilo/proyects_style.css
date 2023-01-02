@@ -1,0 +1,236 @@
+body{
+  background: rgb(217,82,74);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 5rem;
+  margin: 0;
+  width: 55vw;
+  height: 50vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*navegación*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+body {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: rgba(46,46,49);
+  overflow: hidden;
+}
+.container {
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/*conjunto de todo el boton*/
+.container .btn {
+	position: relative;
+	top: -31em;
+	left: -23em;
+	width: 250px;
+	height: 50px;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*boton*/
+.container .btn a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+.container .btn:hover a {
+	letter-spacing: 3px;
+}
+
+/*sombra blanca del boton*/
+.container .btn a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 0.5s;
+	filter: blur(0px);
+}
+.container .btn:hover a::before {
+	transform: skewX(45deg) translate(200px);
+}
+
+.container .btn::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.container .btn:hover::before /*lightup button*/ {
+	bottom: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+
+.container .btn::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	top: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.container .btn:hover::after /*lightup button*/ {
+	top: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+.container .btn:nth-child(1)::before, /*chnage 1*/
+.container .btn:nth-child(1)::after {
+	background: red;
+	box-shadow: 0 0 5px red, 0 0 15px red, 0 0 30px red,
+		0 0 60px red;
+}
+
+
+
+
+
+
+
+/*efecto cristal*/
+.cristal {
+  width: 90%;
+    height: auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color:white;
+    position: absolute;
+    left: 28.5rem;
+    top: 10em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: -4rem;
+
+}
+
+.cristal-title {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/*en caso de tener algún botón*/
+/* a {
+  background-color: #6363db;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}  */
+
+/*fin del boton*/
+
+.cristal {
+  background: rgba(255, 255, 255, .3);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+ }
+
+/*fin del efecto cristal*/
+nav{
+  margin-bottom: 1em;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  top: 2rem;
+}
+
+.proyectos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 480px){
+  body{
+    overflow-x: hidden;
+    background: rgb(217,82,74);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+  }
+
+
+  nav a{
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 2rem;
+  }
+.cristal{
+  position: absolute;
+  left: 7rem;
+  width: 100%;
+}
+
+
+}
