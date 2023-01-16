@@ -186,207 +186,141 @@ body {
 /*fin del efecto cristal*/
 
 
-/* nav{
-  margin-bottom: 1em;
-}
 
-nav a{
-  text-decoration: none;
-  color: white;
-  position: absolute;
-  top: 2rem;
-} */
-
-
-/*porcentajes o circulos */
-
+/*cartas con hover*/
 .container2{
-	margin-left: -2em;
-	justify-content: space-between;
+    display: flex;
+	flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
-  .chart {
-	position: relative;
-	margin-left: 2em;
-	display: inline-block;
-	color: #999;
-	font-size: 20px;
-	text-align: center;
-  }
-  
-  .chart figcaption {
-	padding: 4em 2em;
-	width: 6em;
-	height: 50px;
-	border: 20px solid #00000000;
-	border-radius: 6em;
-	line-height: 50px;
-  }
-  
-  .chart img {
-	position: absolute;
-	max-width: 2.5em;
-	max-height: 2.5em;
-	background: rgba(255, 255, 255, 0);
-  }
-  /* END Container styles */
-  
-  /* Colors for the circles and positions for the graphics */
   .html {
-	top: 4.5em;
-	left: 2.5em;
-  }
-  
-  .html + svg .outer {
-	stroke: #e34f26;
+    --bg-color: #e44f26;
+    --bg-color-light: #ffd4c8;
+    --text-color-hover: rgba(255, 255, 255, 0.407);
+    --box-shadow-color: rgba(255, 215, 97, 0.48);
   }
   
   .css {
-	top: 4.5em;
-	left: 2.5em;
+    --bg-color: #1673b6;
+    --bg-color-light: #cdeaff;
+    --text-color-hover: #fff;
+    --box-shadow-color: rgba(188, 221, 255, 0.48);
   }
   
-  .css + svg .outer {
-	stroke: #0d84ce;
+  .js {
+    --bg-color: #f8de1a;
+    --bg-color-light: #fff8c7;
+    --text-color-hover: #4c5656;
+    --box-shadow-color: rgba(252, 255, 189, 0.762);
   }
   
-  .javascript {
-	max-width: 1em;
-	max-height: 1em;
-	top: 4.5em;
-	left: 2.5em;
+  .card {
+    width: 200px;
+    height: 310px;
+    background: rgba(255, 255, 255, 0.218);
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+	margin-right: 0.5em;
   }
   
-  .javascript + svg .outer {
-	stroke: #f0e040;
+  .card:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+      0 24px 46px var(--box-shadow-color);
   }
   
-  .chart svg {
-	position: absolute;
-	top: 0;
-	left: 0;
+  .card:hover .cor__cobertura {
+    transform: scale(4) translateZ(0);
   }
   
-  .outer {
-	fill: transparent;
-	stroke: #333;
-	stroke-width: 20;
-	stroke-dasharray: 534;
-	transition: stroke-dashoffset 1s;
-	-webkit-animation-play-state: running;
-	
-	/* firefox bug fix - won't rotate at 90deg angles */
-	-moz-transform: rotate(-89deg) translateX(-190px);
+  .card:hover .circulo {
+    background: var(--bg-color);
+    border: 2px dotted var(--bg-color-light);
   }
   
-  .chart:hover .outer {
-	stroke-dashoffset: 534 !important;
-	-webkit-animation-play-state: paused;
-  }
-  /* END Circle colors and graphic positions */
-  
-  
-  /* Set the initial values for the animation */
-  .chart[data-percent='100'] .outer {
-	stroke-dashoffset: 0;
-	-webkit-animation: show100 2s;
-	animation: show100 2s;
+  .card:hover .circulo:after {
+    background: var(--bg-color-light);
   }
   
-  .chart[data-percent='75'] .outer {
-	stroke-dashoffset: 220;
-	-webkit-animation: show75 2s;
-	animation: show75 2s;
+  .card:hover p {
+    color: var(--text-color-hover);
   }
   
-  .chart[data-percent='25'] .outer {
-	stroke-dashoffset: 350;
-	-webkit-animation: show50 2s;
-	animation: show25 2s;
-  }
-  /* END set initial animation values */
-  
-  /* Keyframes for the initial animation */
-  @-webkit-keyframes show100 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 0;
-	}
+  .card:active {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11),
+      0 15px 24px var(--box-shadow-color);
   }
   
-  @keyframes show100 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 0;
-	}
+  .card p {
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.642);
+    margin-top: 30px;
+    z-index: 1000;
+    transition: color 0.3s ease-out;
   }
   
-  @-webkit-keyframes show75 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 220;
-	}
+  .circulo {
+    width: 131px;
+    height: 131px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.333);
+    border: 2px solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease-out;
   }
   
-  @keyframes show75 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 220;
-	}
+  .circulo:after {
+    content: "";
+    width: 118px;
+    height: 118px;
+    display: block;
+    position: absolute;
+    background: var(--bg-color);
+    border-radius: 50%;
+    top: 7px;
+    left: 7px;
+    transition: opacity 0.3s ease-out;
   }
   
-  @-webkit-keyframes show25 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 350;
-	}
+  .circulo svg {
+    z-index: 10000;
+    transform: translateZ(0);
   }
   
-  @keyframes show25 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 350;
-	}
+  .cor__cobertura {
+    width: 118px;
+    position: absolute;
+    height: 118px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    top: 70px;
+    left: 50px;
+    z-index: 0;
+    transition: transform 0.3s ease-out;
   }
-  
-  /* @-webkit-keyframes show25 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 401;
-	}
-  }
-  
-  @keyframes show25 {
-	from {
-	  stroke-dashoffset: 537;
-	}
-	
-	to {
-	  stroke-dashoffset: 401;
-	}
-  } */
-  /* END Keyframes for the initial animation */
+
+/*proyectos*/
+
+
+
+
 
 
 /*tarjeta google*/
